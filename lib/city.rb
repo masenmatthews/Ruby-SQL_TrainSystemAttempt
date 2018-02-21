@@ -22,4 +22,16 @@ class City
   def arrival_time
     @arrival_time
   end
+
+  def self.all()
+    returned_cities = DB.exec("SELECT * FROM cities;")
+    cities = []
+    returned_cities.each() do |item|
+      city_id = item.fetch("city_id")
+      stop_id = item.fetch("stop_id")
+      arrival_time = item.fetch("arrival_time")
+      cities.push(City.new({:city_id => city_id, :stop_id => stop_id, :arrival_time => arrival_time}))
+    end
+    cities
+  end
 end
