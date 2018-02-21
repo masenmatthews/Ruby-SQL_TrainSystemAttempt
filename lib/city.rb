@@ -7,9 +7,9 @@ class City
     @arrival_time = attributes.fetch(:arrival_time)
   end
 
-  # def ==(another_city)
-  #   self.city_id().==(another_city.city_id()).&(self.stop_id().==(another_city.stop_id())).&(self.arrival_time().==(another_city.arrival_time()))
-  # end
+  def ==(another_city)
+    self.city_id().==(another_city.city_id()).&(self.stop_id().==(another_city.stop_id())).&(self.arrival_time().==(another_city.arrival_time()))
+  end
 
   def city_id
     @city_id
