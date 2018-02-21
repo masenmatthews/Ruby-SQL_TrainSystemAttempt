@@ -5,4 +5,4 @@ require("./lib/city")
 require("./lib/train")
 require("pg")
 
-DB = PG.connect({:dbname => "train_system"})
+# DB = PG.connect({:dbname => "train_system"})
